@@ -3,9 +3,9 @@
 }
 
 .u-section-1 .u-sheet-1 {
-  min-height: 400px;
+  min-height: 100vh;
 }
 
 .u-section-1 .u-text-1 {
-  margin: 186px auto 60px;
+  margin: 186px auto 0;
 }
