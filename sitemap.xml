@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://oilfieldvendorfinder.us/Home.html</loc>
-        <lastmod>1705375444574</lastmod>
+        <loc>https://oilfieldvendorfinder.us/🏠home.html</loc>
+        <lastmod>1705423343008</lastmod>
     </url>
     <url>
         <loc>https://oilfieldvendorfinder.us/index.html</loc>
-        <lastmod>1705375444574</lastmod>
+        <lastmod>1705423343008</lastmod>
     </url>
     <url>
-        <loc>https://oilfieldvendorfinder.us/About.html</loc>
+        <loc>https://oilfieldvendorfinder.us/📖about.html</loc>
         <lastmod>1705375091292</lastmod>
     </url>
     <url>
-        <loc>https://oilfieldvendorfinder.us/Contact.html</loc>
+        <loc>https://oilfieldvendorfinder.us/📟contact.html</loc>
         <lastmod>1705375100423</lastmod>
+    </url>
+    <url>
+        <loc>https://oilfieldvendorfinder.us/🤝partners.html</loc>
+        <lastmod>1705422422462</lastmod>
     </url>
 </urlset>
