@@ -25668,7 +25668,7 @@ a.u-button-style.u-border-20 {
 }
 /*begin-variables font-family*/
 .u-body {
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Fira Code';
 }
 h1,
 h2,
@@ -25676,7 +25676,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Roboto,sans-serif;
+  font-family: 'Fira Code';
 }
 /*end-variables font-family*/
 /*begin-variables color*/
@@ -25697,10 +25697,10 @@ h6 {
 /*end-variables color*/
 /*begin-variables font*/
 .u-custom-font.u-text-font {
-  font-family: 'Open Sans',sans-serif !important;
+  font-family: 'Fira Code' !important;
 }
 .u-custom-font.u-heading-font {
-  font-family: Roboto,sans-serif !important;
+  font-family: 'Fira Code' !important;
 }
 /*end-variables font*/
 /*begin-variables colors*/
@@ -42641,6 +42641,13 @@ a.u-link.u-text-hover-grey-90:hover {
         
         
         
+        
+        
+        
+        
+        
+        
+        
         --theme-sheet-width-xl: 1140px;
         --theme-sheet-width-lg: 940px;
         --theme-sheet-width-md: 720px;
@@ -42662,14 +42669,14 @@ a.u-link.u-text-hover-grey-90:hover {
         /** common-rules **/
         h1.u-title
         {
-        font-size: 6rem;
+        font-size: 3rem;
         line-height: 1.1;
         margin-top: 20px;
         margin-bottom: 20px;
-        font-weight: 400;
         list-icon-spacing: 0.3;
         list-icon-size: 0.8;
-        font-family: comfortaa;
+        font-family: 'Fira Code';
+        font-weight: 700;
         }
         h2.u-subtitle
         {
@@ -42678,6 +42685,7 @@ a.u-link.u-text-hover-grey-90:hover {
         line-height: 1.1;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: 'Fira Code';
         }
         h1:not(.u-title)
         {
@@ -42686,17 +42694,18 @@ a.u-link.u-text-hover-grey-90:hover {
         line-height: 1.1;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: 'Fira Code';
         }
         h2:not(.u-subtitle)
         {
-        font-size: 3rem;
+        font-size: 2.25rem;
         line-height: 1.1;
         margin-top: 20px;
         margin-bottom: 20px;
-        font-weight: 400;
         list-icon-spacing: 0.3;
         list-icon-size: 0.8;
         font-family: comfortaa;
+        font-weight: 400;
         }
         h3
         {
@@ -42735,6 +42744,7 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.25rem;
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: 'Fira Code';
         }
         p.u-small-text
         {
@@ -42746,11 +42756,18 @@ a.u-link.u-text-hover-grey-90:hover {
         {
         margin-top: 20px;
         margin-bottom: 20px;
+        font-family: 'Fira Code';
         }
         .u-btn
         {
         margin-top: 20px;
         margin-bottom: 20px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        }
+        .u-btn
+        {
+        border-radius: 10px;
         }
         blockquote
         {
@@ -42958,12 +42975,19 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-sheet-1 {
-  min-height: 72px;
+  min-height: 24px;
 }
 
 .u-header .u-menu-1 {
   font-family: size-14;
-  margin: 20px 0 0 auto;
+  margin: -1px 0 0 auto;
+}
+
+.u-header .u-nav-1 {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: normal;
 }
 
 .u-header .u-nav-2 {
@@ -42973,7 +42997,7 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-image-1 {
   width: 0;
   height: 0;
-  margin: -32px auto 20px 0;
+  margin: -3px auto 0 0;
 }
 
 .u-header .u-logo-image-1 {
@@ -42985,31 +43009,67 @@ a.u-link.u-text-hover-grey-90:hover {
 
 
 .u-footer .u-sheet-1 {
-  min-height: 133px;
+  min-height: 104px;
 }
 
 .u-footer .u-group-1 {
-  min-height: 63px;
-  width: 570px;
-  margin: 35px auto;
+  min-height: 67px;
+  width: 339px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .u-footer .u-container-layout-1 {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 0 0 10px;
 }
 
 .u-footer .u-text-1 {
-  margin: 5px 0;
+  margin: 0;
+}
+
+.u-footer .u-icon-1 {
+  margin-top: 6px;
+}
+
+.u-footer .u-icon-2 {
+  font-size: 1.2143em;
+}
+
+.u-footer .u-icon-3 {
+  width: 14px;
+  height: 19px;
+}
+
+.u-footer .u-btn-1 {
+  border-style: solid;
+  margin: 0 auto 0 414px;
+  padding: 0;
+}
+
+.u-footer .u-btn-2 {
+  border-style: solid;
+  margin: -26px 401px 11px auto;
+  padding: 0;
 }
 @media (max-width: 1199px) {
   .u-footer .u-group-1 {
     width: 470px;
+    height: auto;
   }
 
   .u-footer .u-container-layout-1 {
     padding-left: 49px;
     padding-right: 49px;
+  }
+
+  .u-footer .u-btn-1 {
+    margin-left: 354px;
+  }
+
+  .u-footer .u-btn-2 {
+    margin-top: 20px;
+    margin-right: 201px;
+    margin-left: 433px;
   }
 }
 @media (max-width: 991px) {
@@ -43021,6 +43081,15 @@ a.u-link.u-text-hover-grey-90:hover {
     padding-left: 38px;
     padding-right: 38px;
   }
+
+  .u-footer .u-btn-1 {
+    margin-left: 244px;
+  }
+
+  .u-footer .u-btn-2 {
+    margin-right: 0;
+    margin-left: 323px;
+  }
 }
 @media (max-width: 767px) {
   .u-footer .u-group-1 {
@@ -43031,15 +43100,45 @@ a.u-link.u-text-hover-grey-90:hover {
     padding-left: 28px;
     padding-right: 28px;
   }
+
+  .u-footer .u-btn-1 {
+    margin-top: -2px;
+    margin-left: 101px;
+  }
+
+  .u-footer .u-btn-2 {
+    margin: -26px 101px 13px auto;
+  }
 }
 @media (max-width: 575px) {
+  .u-footer .u-sheet-1 {
+    min-height: 108px;
+  }
+
   .u-footer .u-group-1 {
+    min-height: 71px;
     width: 283px;
   }
 
   .u-footer .u-container-layout-1 {
     padding-left: 18px;
     padding-right: 18px;
+  }
+
+  .u-footer .u-text-1 {
+    width: auto;
+    margin-top: 11px;
+    margin-bottom: -11px;
+  }
+
+  .u-footer .u-btn-1 {
+    margin-top: 11px;
+    margin-left: 23px;
+  }
+
+  .u-footer .u-btn-2 {
+    margin-right: 0;
+    margin-bottom: 0;
   }
 }
 
