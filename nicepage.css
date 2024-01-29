@@ -42980,7 +42980,7 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-menu-1 {
   font-family: size-14;
-  margin: 3px 0 0 auto;
+  margin: 5px 0 0 auto;
 }
 
 .u-header .u-nav-1 {
@@ -42997,7 +42997,7 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-image-1 {
   width: 0;
   height: 0;
-  margin: -7px auto 10px 0;
+  margin: -9px auto 0 0;
 }
 
 .u-header .u-logo-image-1 {
@@ -43005,6 +43005,31 @@ a.u-link.u-text-hover-grey-90:hover {
   height: 100%;
 }
 
+.u-header .u-social-icons-1 {
+  height: 32px;
+  min-height: 16px;
+  width: 116px;
+  min-width: 68px;
+  margin: -23px auto 6px 0;
+}
+
+.u-header .u-icon-1 {
+  color: rgb(85, 172, 238) !important;
+  height: 100%;
+}
+
+.u-header .u-icon-2 {
+  height: 0;
+}
+
+.u-header .u-icon-3 {
+  height: 0;
+}
+@media (max-width: 1199px) {
+  .u-header .u-image-1 {
+    margin-top: -9px;
+  }
+}
 
 
 
