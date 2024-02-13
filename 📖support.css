@@ -6,6 +6,12 @@
   min-height: 100vh;
 }
 
-.u-section-1 .u-text-1 {
-  margin: 186px auto 0;
+.u-section-1 .u-btn-1 {
+  --radius: 50px;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin: 70px auto 60px;
+  padding: 10px 131px;
 }
