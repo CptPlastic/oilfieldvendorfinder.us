@@ -42987,16 +42987,16 @@ a.u-link.u-text-hover-grey-90:hover {
   margin: 5px 0 0 auto;
 }
 
-.u-header .u-nav-1 {
-  font-weight: 500;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: normal;
+.u-header .u-file-icon-1 {
+  background-image: none;
+  font-size: 1.5rem;
 }
 
-.u-header .u-nav-2 {
-  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.4);
-  --radius: 10px;
+.u-header .u-nav-1 {
+  font-size: 1rem;
+  letter-spacing: 0px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .u-header .u-nav-3 {
@@ -43004,7 +43004,6 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 
 .u-header .u-nav-4 {
-  box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.4);
   --radius: 10px;
 }
 
@@ -43029,9 +43028,9 @@ a.u-link.u-text-hover-grey-90:hover {
 
 .u-header .u-text-1 {
   font-size: 1.875rem;
-  font-family: Arvo;
-  letter-spacing: 6px;
-  margin: 10px 0 0 713px;
+  letter-spacing: 1px;
+  font-family: "Fira Code";
+  margin: 10px 0 0 743px;
 }
 
 .u-header .u-icon-1 {
@@ -43059,10 +43058,6 @@ a.u-link.u-text-hover-grey-90:hover {
   height: 0;
 }
 @media (max-width: 1199px) {
-  .u-header .u-nav-2 {
-    --radius: 5px;
-  }
-
   .u-header .u-nav-4 {
     --radius: 5px;
   }
@@ -43073,43 +43068,69 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 1199px) {
   .u-header .u-text-1 {
-    margin-left: 513px;
+    width: auto;
+    margin-left: 548px;
   }
 }
-
 @media (max-width: 991px) {
-  .u-header .u-text-1 {
-    margin-left: 293px;
-  }
-}
-
-@media (max-width: 767px) {
-  .u-header .u-text-1 {
-    width: 427px;
-    margin-left: auto;
+  .u-header .u-menu-1 {
+    margin-top: 4px;
     margin-right: auto;
   }
 
+  .u-header .u-file-icon-1 {
+    height: 0;
+    font-size: calc(1em + 36px);
+    --radius: 7px;
+    padding: 18px 20px;
+  }
+
+  .u-header .u-image-1 {
+    margin-top: -35px;
+    margin-bottom: 39px;
+  }
+}
+@media (max-width: 991px) {
+  .u-header .u-text-1 {
+    margin-left: 328px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-image-1 {
+    margin-top: -35px;
+  }
+}
+@media (max-width: 767px) {
+  .u-header .u-sheet-2 {
+    min-height: 56px;
+  }
+
+  .u-header .u-text-1 {
+    font-size: 1.25rem;
+    margin-left: 269px;
+  }
+
   .u-header .u-social-icons-1 {
-    margin-top: 20px;
-    margin-left: auto;
+    margin-top: -34px;
+    margin-bottom: 12px;
   }
 }
 
 @media (max-width: 575px) {
   .u-header .u-sheet-2 {
-    min-height: 132px;
+    min-height: 48px;
   }
 
   .u-header .u-text-1 {
-    font-size: 1.25rem;
-    width: auto;
-    margin-top: 9px;
+    font-size: 1rem;
+    margin-left: 121px;
   }
 
   .u-header .u-social-icons-1 {
-    margin-top: 21px;
-    margin-bottom: 34px;
+    height: 24px;
+    width: 92px;
+    margin-top: -26px;
+    margin-bottom: 13px;
   }
 }
 .u-footer .u-sheet-1 {
