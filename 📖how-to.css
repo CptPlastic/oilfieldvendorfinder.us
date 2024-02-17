@@ -12,15 +12,28 @@
   font-weight: 700;
   font-size: 0.875rem;
   letter-spacing: 1px;
-  margin: 70px auto 60px;
+  margin: 69px auto 0;
+  padding: 10px 131px;
+}
+
+.u-section-1 .u-btn-2 {
+  --radius: 50px;
+  border-style: solid;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  margin: 21px auto 60px;
   padding: 10px 131px;
 }
 
 @media (max-width: 575px) {
   .u-section-1 .u-btn-1 {
-    margin-left: 0;
-    margin-right: 0;
     padding-left: 27px;
     padding-right: 27px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    padding-left: 22px;
+    padding-right: 22px;
   }
 }
