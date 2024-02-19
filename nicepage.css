@@ -42999,12 +42999,16 @@ a.u-link.u-text-hover-grey-90:hover {
   text-transform: uppercase;
 }
 
+.u-header .u-nav-2 {
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+}
+
 .u-header .u-nav-3 {
   font-size: 1.25rem;
 }
 
 .u-header .u-nav-4 {
-  --radius: 10px;
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
 }
 
 .u-header .u-image-1 {
