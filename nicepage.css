@@ -43044,6 +43044,11 @@ a.u-link.u-text-hover-grey-90:hover {
   margin: 10px 0 0 743px;
 }
 
+.u-header .u-btn-1 {
+  background-image: none;
+  padding: 0;
+}
+
 .u-header .u-icon-1 {
   vertical-align: 0px;
   font-size: 1.1334em;
