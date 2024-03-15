@@ -45,15 +45,18 @@
     margin-top: 5%;
   }
 
+  <style>
   .close-button {
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 20px;
     color: red;
-    font-size: 34px;
+    font-size: 40px; /* Increased font size */
+    padding: 10px; /* Added padding */
     z-index: 3;
   }
+</style>
 </style>
 </head>
 <body>
