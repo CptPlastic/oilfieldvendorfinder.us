@@ -8,6 +8,7 @@
   body {
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Disable scrolling initially */
   }
 
   .image-grid {
@@ -25,6 +26,7 @@
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer; /* Add cursor pointer for better UX */
   }
 
   .file-name {
@@ -62,6 +64,12 @@
     font-size: 24px;
     z-index: 3;
   }
+
+  /* Blur background when the image is enlarged */
+  .blur {
+    filter: blur(5px);
+  }
+
 </style>
 </head>
 <body>
@@ -81,7 +89,7 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" alt=""><div class="file-name">' . $fileName . '</div></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" alt="' . $fileName . '" onclick="showEnlargedImage(\'' . $imageUrl . '\', \'' . $fileName . '\')"><div class="file-name">' . $fileName . '</div></div>';
     }
   ?>
 </div>
@@ -101,14 +109,14 @@
     enlargedImg.src = src;
     fileNameElement.textContent = fileName;
     enlargedImageContainer.style.display = 'flex';
-    body.style.overflow = 'hidden'; // Disable scrolling
+    body.classList.add('blur'); // Add blur class to body
   }
 
   function hideEnlargedImage() {
     var body = document.querySelector('body');
     var enlargedImageContainer = document.getElementById('enlarged-image-container');
     enlargedImageContainer.style.display = 'none';
-    body.style.overflow = 'auto'; // Enable scrolling
+    body.classList.remove('blur'); // Remove blur class from body
   }
 </script>
 
