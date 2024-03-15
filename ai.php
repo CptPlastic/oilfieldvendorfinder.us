@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-OFVF-IMAGES</title>
 <style>
+  body {
+    overflow: hidden; /* Prevent scrolling when the image is popped up */
+  }
+
   .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -24,7 +28,7 @@
     height: auto;
   }
 
-  .enlarged-image {
+  .enlarged-image-container {
     display: none;
     position: fixed;
     top: 0;
@@ -34,14 +38,25 @@
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
     text-align: center;
+    backdrop-filter: blur(5px); /* Apply blur effect to background */
   }
 
-  .enlarged-image img {
+  .enlarged-image {
     max-width: 90%;
     max-height: 90%;
     margin: auto;
     display: block;
     margin-top: 5%;
+  }
+
+  .close-button {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    z-index: 3;
   }
 </style>
 </head>
@@ -62,27 +77,30 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src)" alt=""></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""></div>';
     }
   ?>
 </div>
 
-<div class="enlarged-image" id="enlarged-image">
-  <span onclick="hideEnlargedImage()" style="cursor: pointer; position: absolute; top: 10px; right: 20px; color: white; font-size: 24px;">&times;</span>
-  <img id="enlarged-img" src="" alt="">
+<div class="enlarged-image-container" id="enlarged-image-container">
+  <span class="close-button" onclick="hideEnlargedImage()">&times;</span>
+  <img id="enlarged-img" class="enlarged-image" src="" alt="">
+  <div id="file-name" style="color: white; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);"></div>
 </div>
 
 <script>
-  function showEnlargedImage(src) {
-    var enlargedImage = document.getElementById('enlarged-image');
+  function showEnlargedImage(src, fileName) {
+    var enlargedImageContainer = document.getElementById('enlarged-image-container');
     var enlargedImg = document.getElementById('enlarged-img');
+    var fileNameElement = document.getElementById('file-name');
     enlargedImg.src = src;
-    enlargedImage.style.display = 'block';
+    fileNameElement.textContent = fileName;
+    enlargedImageContainer.style.display = 'block';
   }
 
   function hideEnlargedImage() {
-    var enlargedImage = document.getElementById('enlarged-image');
-    enlargedImage.style.display = 'none';
+    var enlargedImageContainer = document.getElementById('enlarged-image-container');
+    enlargedImageContainer.style.display = 'none';
   }
 </script>
 
