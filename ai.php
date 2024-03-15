@@ -61,6 +61,10 @@
     padding: 5px 10px;
     border-radius: 5px;
   }
+
+  .image-item:hover .file-name {
+    display: none;
+  }
 </style>
 </head>
 <body>
@@ -80,7 +84,7 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""><div class="file-name">' . $fileName . '</div></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" alt=""><div class="file-name">' . $fileName . '</div></div>';
     }
   ?>
 </div>
