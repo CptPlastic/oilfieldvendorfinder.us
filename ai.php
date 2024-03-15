@@ -7,9 +7,10 @@
 <style>
   .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5px;
-    padding: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background-color: rgba(0, 0, 0);
+    padding: 1px;
   }
 
   .image-item {
@@ -50,8 +51,8 @@
     position: absolute;
     top: 10px;
     right: 20px;
-    color: white;
-    font-size: 24px;
+    color: red;
+    font-size: 34px;
     z-index: 3;
   }
 </style>
@@ -81,7 +82,7 @@
 <div class="enlarged-image-container" id="enlarged-image-container">
   <span class="close-button" onclick="hideEnlargedImage()">&times;</span>
   <img id="enlarged-img" class="enlarged-image" src="" alt="">
-  <div id="file-name" style="color: white; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);"></div>
+  <div id="file-name" style="color: orange; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%);"></div>
 </div>
 
 <script>
