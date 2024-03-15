@@ -45,17 +45,6 @@
     margin-top: 5%;
   }
 
-  <style>
-  .close-button {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: red;
-    font-size: 40px; /* Increased font size */
-    padding: 10px; /* Added padding */
-    z-index: 3;
-  }
 </style>
 </style>
 </head>
@@ -104,6 +93,30 @@
     var enlargedImageContainer = document.getElementById('enlarged-image-container');
     enlargedImageContainer.style.display = 'none';
     body.style.overflow = 'auto'; // Enable scrolling
+  }
+
+  function showEnlargedImage(src, fileName) {
+    var body = document.querySelector('body');
+    var enlargedImageContainer = document.getElementById('enlarged-image-container');
+    var enlargedImg = document.getElementById('enlarged-img');
+    var fileNameElement = document.getElementById('file-name');
+    enlargedImg.src = src;
+    fileNameElement.textContent = fileName;
+    enlargedImageContainer.style.display = 'block';
+    body.style.overflow = 'hidden'; // Disable scrolling
+
+    // Add event listener to close the enlarged image when clicked anywhere on the screen
+    enlargedImageContainer.addEventListener('click', hideEnlargedImage);
+  }
+
+  function hideEnlargedImage() {
+    var body = document.querySelector('body');
+    var enlargedImageContainer = document.getElementById('enlarged-image-container');
+    enlargedImageContainer.style.display = 'none';
+    body.style.overflow = 'auto'; // Enable scrolling
+
+    // Remove event listener to avoid closing the image when clicking inside it
+    enlargedImageContainer.removeEventListener('click', hideEnlargedImage);
   }
 </script>
 
