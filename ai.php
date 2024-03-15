@@ -7,9 +7,8 @@
 <style>
   .image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 0fr));
     gap: 0px;
-    background-color: rgba(0, 0, 0);
     padding: 0px;
   }
 
@@ -82,7 +81,7 @@
 <div class="enlarged-image-container" id="enlarged-image-container">
   <span class="close-button" onclick="hideEnlargedImage()">&times;</span>
   <img id="enlarged-img" class="enlarged-image" src="" alt="">
-  <div id="file-name" style="color: white; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;"></div>
+  <div id="file-name" style="color: white; position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 5px;"></div>
 </div>
 
 <script>
