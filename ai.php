@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-OFVF-IMAGES</title>
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    overflow: hidden; /* Disable scrolling initially */
-  }
-
   .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -19,27 +13,15 @@
   }
 
   .image-item {
-    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Ensure the image doesn't overflow its container */
+    position: relative; /* Set position relative for absolute positioning */
   }
 
   .image-item img {
     width: 100%;
     height: auto;
-    display: block;
-    cursor: pointer; /* Add cursor pointer for better UX */
-  }
-
-  .file-name {
-    display: none; /* Initially hide file names */
-    color: white;
-    font-weight: bold;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
   }
 
   .enlarged-image-container {
@@ -49,10 +31,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
     text-align: center;
-    overflow-y: auto;
+    backdrop-filter: blur(5px); /* Apply blur effect to background */
+  }
+
+  .enlarged-image {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
   }
 
   .close-button {
@@ -64,12 +54,6 @@
     font-size: 24px;
     z-index: 3;
   }
-
-  /* Blur background when the image is enlarged */
-  .blur {
-    filter: blur(5px);
-  }
-
 </style>
 </head>
 <body>
@@ -89,7 +73,7 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" alt="' . $fileName . '" onclick="showEnlargedImage(\'' . $imageUrl . '\', \'' . $fileName . '\')"><div class="file-name">' . $fileName . '</div></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""></div>';
     }
   ?>
 </div>
@@ -97,7 +81,7 @@
 <div class="enlarged-image-container" id="enlarged-image-container">
   <span class="close-button" onclick="hideEnlargedImage()">&times;</span>
   <img id="enlarged-img" class="enlarged-image" src="" alt="">
-  <div id="file-name" class="file-name"></div>
+  <div id="file-name" style="color: white; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);"></div>
 </div>
 
 <script>
@@ -108,15 +92,15 @@
     var fileNameElement = document.getElementById('file-name');
     enlargedImg.src = src;
     fileNameElement.textContent = fileName;
-    enlargedImageContainer.style.display = 'flex';
-    body.classList.add('blur'); // Add blur class to body
+    enlargedImageContainer.style.display = 'block';
+    body.style.overflow = 'hidden'; // Disable scrolling
   }
 
   function hideEnlargedImage() {
     var body = document.querySelector('body');
     var enlargedImageContainer = document.getElementById('enlarged-image-container');
     enlargedImageContainer.style.display = 'none';
-    body.classList.remove('blur'); // Remove blur class from body
+    body.style.overflow = 'auto'; // Enable scrolling
   }
 </script>
 
