@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Primary Meta Tags -->
+<title>OFVF.US Vendors according to AI</title>
+<meta name="title" content="OFVF.US Vendors according to AI" />
+<meta name="description" content="AI had a go at sketching our vendors' businesses. Time to play 'Where's Waldo' with your company! Let's see if it nailed any resemblance. " />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://oilfieldvendorfinder.us/ai.php" />
+<meta property="og:title" content="OFVF.US Vendors according to AI" />
+<meta property="og:description" content="AI had a go at sketching our vendors' businesses. Time to play 'Where's Waldo' with your company! Let's see if it nailed any resemblance. " />
+<meta property="og:image" content="https://oilfieldvendorfinder.us/ai-images/OldSchoolServices-ThruTubingServices.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://oilfieldvendorfinder.us/ai.php" />
+<meta property="twitter:title" content="OFVF.US Vendors according to AI" />
+<meta property="twitter:description" content="AI had a go at sketching our vendors' businesses. Time to play 'Where's Waldo' with your company! Let's see if it nailed any resemblance. " />
+<meta property="twitter:image" content="https://oilfieldvendorfinder.us/ai-images/OldSchoolServices-ThruTubingServices.png" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-OFVF-IMAGES</title>
 <style>
   .image-grid {
     display: grid;
