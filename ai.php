@@ -30,7 +30,7 @@
   <!-- Make sure images are in the same directory or adjust the path accordingly -->
  <?php
     // Get all files in the images folder
-    $files = glob("/ai-images/*.*");
+    $files = glob("/httpdocs/ai-images/*.*");
 
     // Loop through each file and display it as an image
     foreach ($files as $file) {
