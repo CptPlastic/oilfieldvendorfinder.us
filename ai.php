@@ -30,7 +30,7 @@
   <!-- Make sure images are in the same directory or adjust the path accordingly -->
  <?php
     // Get all files in the images folder
-    $files = glob("https://oilfieldvendorfinder.us/ai-images/*.*");
+    $files = glob("/var/www/vhosts/oilfieldvendorfinder.us/httpdocs/ai-images/*.*");
 
     // Loop through each file and display it as an image
     foreach ($files as $file) {
