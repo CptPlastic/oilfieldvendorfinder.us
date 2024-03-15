@@ -78,13 +78,11 @@
     foreach ($files as $file) {
         // Extract the file name from the path
         $fileName = basename($file);
-        // Remove file extension
-        $fileNameWithoutExt = pathinfo($fileName, PATHINFO_FILENAME);
         // Encode the file name to be URL safe
-        $encodedFileName = urlencode($fileNameWithoutExt);
+        $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileNameWithoutExt . '\')" alt=""></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""></div>';
     }
   ?>
 </div>
