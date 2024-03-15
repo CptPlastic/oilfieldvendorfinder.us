@@ -15,11 +15,37 @@
   .image-item {
     width: 100%;
     height: auto;
+    overflow: hidden; /* Ensure the image doesn't overflow its container */
+    position: relative; /* Set position relative for absolute positioning */
   }
 
   .image-item img {
     width: 100%;
     height: auto;
+    transition: transform 0.3s ease; /* Add transition effect */
+  }
+
+  .image-item:hover img {
+    transform: scale(1.1); /* Increase size on hover */
+  }
+
+  /* Position the enlarged image on hover */
+  .image-item:hover:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1; /* Ensure it appears above the image */
+    transition: opacity 0.3s ease; /* Add transition effect */
+    opacity: 0; /* Initially hidden */
+  }
+
+  /* Show the enlarged image on hover */
+  .image-item:hover:after {
+    opacity: 1;
   }
 </style>
 </head>
