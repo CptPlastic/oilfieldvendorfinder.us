@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-OFVF-IMAGES</title>
 <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
   .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -13,15 +18,13 @@
   }
 
   .image-item {
-    width: 100%;
-    height: auto;
-    overflow: hidden; /* Ensure the image doesn't overflow its container */
-    position: relative; /* Set position relative for absolute positioning */
+    position: relative;
   }
 
   .image-item img {
     width: 100%;
     height: auto;
+    display: block;
   }
 
   .enlarged-image-container {
@@ -31,18 +34,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 2;
     text-align: center;
-    backdrop-filter: blur(5px); /* Apply blur effect to background */
-  }
-
-  .enlarged-image {
-    max-width: 90%;
-    max-height: 90%;
-    margin: auto;
-    display: block;
-    margin-top: 5%;
+    overflow-y: auto;
   }
 
   .close-button {
@@ -59,9 +54,12 @@
     color: white;
     font-weight: bold;
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
   }
 </style>
 </head>
@@ -82,7 +80,7 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""><div class="file-name">' . $fileName . '</div></div>';
     }
   ?>
 </div>
@@ -101,7 +99,7 @@
     var fileNameElement = document.getElementById('file-name');
     enlargedImg.src = src;
     fileNameElement.textContent = fileName;
-    enlargedImageContainer.style.display = 'block';
+    enlargedImageContainer.style.display = 'flex';
     body.style.overflow = 'hidden'; // Disable scrolling
   }
 
