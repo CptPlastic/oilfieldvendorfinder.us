@@ -54,6 +54,15 @@
     font-size: 24px;
     z-index: 3;
   }
+
+  .file-name {
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 </style>
 </head>
 <body>
@@ -69,11 +78,13 @@
     foreach ($files as $file) {
         // Extract the file name from the path
         $fileName = basename($file);
+        // Remove file extension
+        $fileNameWithoutExt = pathinfo($fileName, PATHINFO_FILENAME);
         // Encode the file name to be URL safe
-        $encodedFileName = urlencode($fileName);
+        $encodedFileName = urlencode($fileNameWithoutExt);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileName . '\')" alt=""></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src, \'' . $fileNameWithoutExt . '\')" alt=""></div>';
     }
   ?>
 </div>
@@ -81,7 +92,7 @@
 <div class="enlarged-image-container" id="enlarged-image-container">
   <span class="close-button" onclick="hideEnlargedImage()">&times;</span>
   <img id="enlarged-img" class="enlarged-image" src="" alt="">
-  <div id="file-name" style="color: white; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);"></div>
+  <div id="file-name" class="file-name"></div>
 </div>
 
 <script>
