@@ -5,10 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-OFVF-IMAGES</title>
 <style>
-  body {
-    overflow: hidden; /* Prevent scrolling when the image is popped up */
-  }
-
   .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -90,17 +86,21 @@
 
 <script>
   function showEnlargedImage(src, fileName) {
+    var body = document.querySelector('body');
     var enlargedImageContainer = document.getElementById('enlarged-image-container');
     var enlargedImg = document.getElementById('enlarged-img');
     var fileNameElement = document.getElementById('file-name');
     enlargedImg.src = src;
     fileNameElement.textContent = fileName;
     enlargedImageContainer.style.display = 'block';
+    body.style.overflow = 'hidden'; // Disable scrolling
   }
 
   function hideEnlargedImage() {
+    var body = document.querySelector('body');
     var enlargedImageContainer = document.getElementById('enlarged-image-container');
     enlargedImageContainer.style.display = 'none';
+    body.style.overflow = 'auto'; // Enable scrolling
   }
 </script>
 
