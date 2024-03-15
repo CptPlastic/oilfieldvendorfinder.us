@@ -22,30 +22,26 @@
   .image-item img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease; /* Add transition effect */
   }
 
-  .image-item:hover img {
-    transform: scale(1.1); /* Increase size on hover */
-  }
-
-  /* Position the enlarged image on hover */
-  .image-item:hover:after {
-    content: '';
-    position: absolute;
+  .enlarged-image {
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    z-index: 1; /* Ensure it appears above the image */
-    transition: opacity 0.3s ease; /* Add transition effect */
-    opacity: 0; /* Initially hidden */
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
+    text-align: center;
   }
 
-  /* Show the enlarged image on hover */
-  .image-item:hover:after {
-    opacity: 1;
+  .enlarged-image img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
   }
 </style>
 </head>
@@ -66,10 +62,29 @@
         $encodedFileName = urlencode($fileName);
         // Generate the URL to the image using the encoded file name
         $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
-        echo '<div class="image-item"><img src="' . $imageUrl . '" alt=""></div>';
+        echo '<div class="image-item"><img src="' . $imageUrl . '" onclick="showEnlargedImage(this.src)" alt=""></div>';
     }
   ?>
 </div>
+
+<div class="enlarged-image" id="enlarged-image">
+  <span onclick="hideEnlargedImage()" style="cursor: pointer; position: absolute; top: 10px; right: 20px; color: white; font-size: 24px;">&times;</span>
+  <img id="enlarged-img" src="" alt="">
+</div>
+
+<script>
+  function showEnlargedImage(src) {
+    var enlargedImage = document.getElementById('enlarged-image');
+    var enlargedImg = document.getElementById('enlarged-img');
+    enlargedImg.src = src;
+    enlargedImage.style.display = 'block';
+  }
+
+  function hideEnlargedImage() {
+    var enlargedImage = document.getElementById('enlarged-image');
+    enlargedImage.style.display = 'none';
+  }
+</script>
 
 </body>
 </html>
