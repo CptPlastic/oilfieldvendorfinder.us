@@ -28,9 +28,9 @@
 <div class="image-grid">
   <!-- Replace 'path_to_your_images_folder' with the path to your images folder -->
   <!-- Make sure images are in the same directory or adjust the path accordingly -->
-  <?php
+ <?php
     // Get all files in the images folder
-    $files = glob("ai_images/*.*");
+    $files = glob("/ai_images/*.*");
 
     // Loop through each file and display it as an image
     foreach ($files as $file) {
