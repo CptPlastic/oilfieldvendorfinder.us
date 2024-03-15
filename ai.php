@@ -28,13 +28,19 @@
 <div class="image-grid">
   <!-- Replace 'path_to_your_images_folder' with the path to your images folder -->
   <!-- Make sure images are in the same directory or adjust the path accordingly -->
- <?php
+  <?php
     // Get all files in the images folder
     $files = glob("/var/www/vhosts/oilfieldvendorfinder.us/httpdocs/ai-images/*.*");
 
     // Loop through each file and display it as an image
     foreach ($files as $file) {
-      echo '<div class="image-item"><img src="' . $file . '" alt=""></div>';
+        // Extract the file name from the path
+        $fileName = basename($file);
+        // Encode the file name to be URL safe
+        $encodedFileName = urlencode($fileName);
+        // Generate the URL to the image using the encoded file name
+        $imageUrl = "https://oilfieldvendorfinder.us/ai-images/" . $encodedFileName;
+        echo '<div class="image-item"><img src="' . $imageUrl . '" alt=""></div>';
     }
   ?>
 </div>
